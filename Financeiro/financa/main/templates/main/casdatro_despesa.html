@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finanças Pessoais</title>
+    <link rel="stylesheet" href="../../static/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1 href="./index.html">Finanças Pessoais</h1>
+        <nav>
+            <ul>
+                <li><a href="./despesas.html">Cadastrar Despesa</a></li>
+                <li><a href="./receita.html">Lista Receita</a></li>
+                <li><a href="./metas.html">Cadastrar Meta</a></li>
+                <li><a href="./relatorio.html">Relatório</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="cadastrar-despesa" class="cadastro">
+        <h2>Cadastrar Despesa</h2>
+        <form id="form-despesa">
+            <label for="valor-despesa">Valor:</label>
+            <input type="number" id="valor-despesa" step="0.01" required>
+
+            <label for="data-despesa">Data:</label>
+            <input type="date" id="data-despesa" required>
+
+            <label for="categoria-despesa">Categoria:</label>
+            <select id="categoria-despesa" required>
+                <option value="moradia">Moradia</option>
+                <option value="alimentacao">Alimentação</option>
+                <option value="transporte">Transporte</option>
+                <option value="lazer">Lazer</option>
+                <option value="saude">Saúde</option>
+            </select>
+
+            <button type="submit">Salvar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2023 Finanças Pessoais</p>
+    </footer>
+</body>
+</html>

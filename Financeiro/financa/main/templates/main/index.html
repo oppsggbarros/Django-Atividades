@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finanças Pessoais</title>
+    <link rel="stylesheet" href="../../static/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1 href="./index.html">Finanças Pessoais</h1>
+        <nav>
+            <ul>
+                <li><a href="./despesas.html">Cadastrar Despesa</a></li>
+                <li><a href="./receita.html">Lista Receita</a></li>
+                <li><a href="./metas.html">Cadastrar Meta</a></li>
+                <li><a href="./relatorio.html">Relatório</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="resumo">
+            <h2>Resumo Financeiro</h2>
+            <div class="cards">
+                <div class="card receita">
+                    <h3>Total de Receitas</h3>
+                    <p id="total-receitas">R$ 0,00</p>
+                </div>
+                <div class="card despesa">
+                    <h3>Total de Despesas</h3>
+                    <p id="total-despesas">R$ 0,00</p>
+                </div>
+                <div class="card saldo">
+                    <h3>Saldo Atual</h3>
+                    <p id="saldo-atual">R$ 0,00</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="grafico">
+            <h2>Distribuição de Despesas</h2>
+            <div class="chart-container">
+                <canvas id="despesasChart"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2023 Finanças Pessoais</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('despesasChart').getContext('2d');
+        const despesasChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Moradia', 'Alimentação', 'Transporte', 'Lazer', 'Saúde'],
+                datasets: [{
+                    label: 'Despesas por Categoria',
+                    data: [1200, 800, 500, 300, 700],
+                    backgroundColor: [
+                        '#FF6384',
+                        '#36A2EB',
+                        '#FFCE56',
+                        '#4BC0C0',
+                        '#9966FF'
+                    ]
+                }]
+            }
+        });
+    </script>
+</body>
+</html>

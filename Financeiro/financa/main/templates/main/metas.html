@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finanças Pessoais</title>
+    <link rel="stylesheet" href="../../static/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1 href="./index.html">Finanças Pessoais</h1>
+        <nav>
+            <ul>
+                <li><a href="./despesas.html">Cadastrar Despesa</a></li>
+                <li><a href="./receita.html">Lista Receita</a></li>
+                <li><a href="./metas.html">Cadastrar Meta</a></li>
+                <li><a href="./relatorio.html">Relatório</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="metas" class="metas">
+        <h2>Metas Financeiras</h2>
+        <form id="form-meta">
+            <label for="descricao-meta">Descrição:</label>
+            <input type="text" id="descricao-meta" required>
+
+            <label for="valor-meta">Valor Total:</label>
+            <input type="number" id="valor-meta" step="0.01" required>
+
+            <label for="data-meta">Data Limite:</label>
+            <input type="date" id="data-meta" required>
+
+            <button type="submit">Salvar</button>
+        </form>
+
+        <div class="lista-metas">
+            <h3>Minhas Metas</h3>
+            <ul id="lista-metas"></ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2023 Finanças Pessoais</p>
+    </footer>
+</body>
+</html>
