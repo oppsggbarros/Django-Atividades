@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finanças Pessoais</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1 href="./index.html">Finanças Pessoais</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'casdatro_despesa' %}">Cadastrar Despesa</a></li>
+                <li><a href="{% url 'cadastro_receita' %}">Cadastrar Receita</a></li>
+                <li><a href="{% url 'metas' %}">Cadastrar Meta</a></li>
+                
+                <li><a href="{% url 'relatorio' %}">Relatório</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="form" class="cadastro">
+        <br>
+        <form id="form-receita">
+            <h2>Cadastrar Receita</h2>
+            <label for="valor-receita">Valor:</label>
+            <input type="number" id="valor-receita" step="0.01" required>
+
+            <label for="data-receita">Data:</label>
+            <input type="date" id="data-receita" required>
+
+            <label for="categoria-receita">Categoria:</label>
+            <select id="categoria-receita" required>
+                <option value="trabalho">Trabalho</option>
+                <option value="investimentos">Investimentos</option>
+                <option value="freelance">Freelance</option>
+            </select>
+
+            <button type="submit">Salvar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 Finanças Pessoais</p>
+    </footer>
+</body>
+</html>

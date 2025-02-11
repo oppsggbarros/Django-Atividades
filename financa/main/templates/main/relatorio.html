@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finanças Pessoais</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"></head>
+<body>
+    <header>
+        <h1 href="./index">Finanças Pessoais</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'casdatro_despesa' %}">Cadastrar Despesa</a></li>
+                <li><a href="{% url 'cadastro_receita' %}">Cadastrar Receita</a></li>
+                <li><a href="{% url 'metas' %}">Cadastrar Meta</a></li>
+                
+                <li><a href="{% url 'relatorio' %}">Relatório</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="grafico" id="relatorio">
+        <h2>Lista de Receitas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Valor</th>
+                    <th>Data</th>
+                    <th>Categoria</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>R$ 2.000,00</td>
+                    <td>10/10/2025</td>
+                    <td>Trabalho</td>
+                    <td>
+                        <button class="editar">Editar</button>
+                        <button class="excluir">Excluir</button>
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </section>
+
+    <section id="relatorio" class="grafico">
+        <h2>Distribuição de Despesas</h2>
+        <div class="chart-container">
+            <canvas id="despesasChart"></canvas>
+        </div>
+    </section>
+    <section id="relatorio" class="grafico">
+        <div class="lista-metas">
+            <h2>Minhas Metas</h2>
+            <ul id="lista-metas"></ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Finanças Pessoais</p>
+    </footer>
+</body>
+</html>

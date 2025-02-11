@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finanças Pessoais</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"></head>
+<body>
+    <header>
+        <h1 href="./index.html">Finanças Pessoais</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'casdatro_despesa' %}">Cadastrar Despesa</a></li>
+                <li><a href="{% url 'cadastro_receita' %}">Cadastrar Receita</a></li>
+                <li><a href="{% url 'metas' %}">Cadastrar Meta</a></li>
+                
+                <li><a href="{% url 'relatorio' %}">Relatório</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <br>
+        <form id="form">
+            <h2>Metas Financeiras</h2>
+            <label for="descricao-meta">Descrição:</label>
+            <input type="text" id="descricao-meta" required>
+
+            <label for="valor-meta">Valor Total:</label>
+            <input type="number" id="valor-meta" step="0.01" required>
+
+            <label for="data-meta">Data Limite:</label>
+            <input type="date" id="data-meta" required>
+
+            <button type="submit">Salvar</button>
+        </form> 
+    </section>
+
+    <footer>
+        <p>© 2025 Finanças Pessoais</p>
+    </footer>
+</body>
+</html>
